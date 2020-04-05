@@ -87,7 +87,6 @@ int udp_cli_recv(struct udp_cli_t *self, struct resp_res_t *resp)
     struct udp_gram_t response;
     register unsigned int len, recv_buf_siz;
     register struct sockaddr_in *srv_addr;
-    unsigned char *addr;
 
     socklen = SOCK_LEN;
     recv_buf_siz = sizeof(struct udp_gram_t);
@@ -97,7 +96,6 @@ int udp_cli_recv(struct udp_cli_t *self, struct resp_res_t *resp)
     {
         memset((void *)srv_addr, 0, SOCK_LEN);
         len = recvfrom(self->sockfd, (void *)&response, recv_buf_siz, 0, (struct sockaddr *)srv_addr, &socklen);
-        addr = (unsigned char *)srv_addr;
     }
     while (memcmp(response.head.uuid.ch, self->uuid.ch, sizeof(guid_t)));
     close(self->sockfd);
