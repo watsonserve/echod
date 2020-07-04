@@ -3,6 +3,10 @@ name = "echod"
 version = "0.1.0"
 authors = ["james <hamishwatson@live.com>"]
 edition = "2018"
+description = "udp echo server"
+license = "GPL-2.0-only"
+readme = "README.md"
+repository = "https://github.com/watsonserve/echod.git"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
